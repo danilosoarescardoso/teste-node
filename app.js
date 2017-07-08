@@ -2,9 +2,11 @@ var express = require('express');
 
 var app = express();
 
-app.get('/produtos', function(req, res){
+app.set('view engine', 'ejs')
 
-	res.send("<html><body>Listagem de Produtos</body>");
+app.get('/produtos', function(req, res){
+	console.log("listando um teste");
+	res.render("produtos/lista");
 
 });
 
