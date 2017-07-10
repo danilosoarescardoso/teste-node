@@ -7,10 +7,13 @@ module.exports = function(app){
 			host: 'localhost',
 			user: 'root',
 			password: '',
-			database: 'node-teste_database'
-		})
+			database: 'nodeteste_database'
+		});
 
-		connection.query('select * from livros');
+		connection.query('select * from livros', function(err, results){
+			res.send(results);
+		});
+
 		connection.end();
 
 		//consulta
