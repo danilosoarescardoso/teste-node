@@ -10,13 +10,12 @@ module.exports = function(app){
 			database: 'nodeteste_database'
 		});
 
-		connection.query('select * from livros', function(err, results){
-			res.send(results);
+		connection.query('select * from produtos', function(err, results){
+			res.render('produtos/lista',{lista:results});
 		});
 
 		connection.end();
 
 		//consulta
-		res.render("produtos/lista");
 	});
 }
