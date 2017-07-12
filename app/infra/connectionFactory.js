@@ -1,5 +1,6 @@
 var mysql = require('mysql');
-module.exports = function(){
+
+function createDBConnection(){
 
 	return mysql.createConnection({
 			host: 'localhost',
@@ -7,4 +8,9 @@ module.exports = function(){
 			password: '',
 			database: 'nodeteste_database'
 		});
+}
+
+
+module.exports = function(){
+	return createDBConnection;
 }
